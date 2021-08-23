@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Github User Application - Submission 2</string>
+    <string name="splash_logo">Splash Logo</string>
+    <string name="search">Search</string>
+    <string name="company">Company</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="location">Location</string>
+    <string name="github_url">GITHUB_URL</string>
+    <string name="angka">0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="repositories">Repos</string>
+    <string name="bio">Bio</string>
+    <string name="title">GitHub User</string>
+    <string name="check_connection_warning">Please check your network connection.</string>
+    <string name="disconnected">Disconnected</string>
+</resources>

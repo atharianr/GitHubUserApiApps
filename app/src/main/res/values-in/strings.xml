@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Aplikasi Github User - Submission 2</string>
+    <string name="splash_logo">Logo Splash</string>
+    <string name="search">Cari</string>
+    <string name="company">Perusahaan</string>
+    <string name="name">Nama</string>
+    <string name="username">Username</string>
+    <string name="location">Lokasi</string>
+    <string name="github_url">GITHUB_URL</string>
+    <string name="angka">0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="following">Mengikuti</string>
+    <string name="followers">Pengikut</string>
+    <string name="repositories">Repos</string>
+    <string name="bio">Bio</string>
+    <string name="title">GitHub User</string>
+    <string name="check_connection_warning">Periksa kembali koneksi internet anda.</string>
+    <string name="disconnected">Terputus</string>
+</resources>
