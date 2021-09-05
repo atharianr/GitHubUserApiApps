@@ -32,13 +32,86 @@
 
     <ImageView
         android:id="@+id/iv_disconnected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/disconnected"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/ic_baseline_signal_cellular_connected_no_internet_4_bar_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_disconnected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/disconnected" />
+
+    <TextView
+        android:id="@+id/tv_disconnected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/info_no_connection"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/rv_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rv_search" />
+
+    <TextView
+        android:id="@+id/tv_disconnected_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/info_no_connection_2"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_disconnected" />
+
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_not_found"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/not_found" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/info_not_found"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_search" />
+
+    <TextView
+        android:id="@+id/tv_info_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/info_not_found_2"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

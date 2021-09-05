@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.FragmentFollowBinding
-import com.nomadev.aplikasigithubuser_submission2.model.ItemsModel
+import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
-import com.nomadev.aplikasigithubuser_submission2.ui.search.UserAdapter
+import com.nomadev.aplikasigithubuser_submission2.ui.adapter.UserAdapter
 
 class FollowersFragment : Fragment(R.layout.fragment_follow) {
 
@@ -29,7 +29,6 @@ class FollowersFragment : Fragment(R.layout.fragment_follow) {
         _binding = FragmentFollowBinding.bind(view)
 
         adapter = UserAdapter()
-        adapter.notifyDataSetChanged()
 
         adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback{
             override fun onItemClicked(data: ItemsModel) {
@@ -43,6 +42,7 @@ class FollowersFragment : Fragment(R.layout.fragment_follow) {
         binding.rvUser.setHasFixedSize(true)
         binding.rvUser.layoutManager = LinearLayoutManager(this.activity)
         binding.rvUser.adapter = adapter
+        adapter.notifyDataSetChanged()
 
         showLoading(true)
 

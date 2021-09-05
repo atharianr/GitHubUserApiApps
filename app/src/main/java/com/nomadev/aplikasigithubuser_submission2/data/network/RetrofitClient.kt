@@ -1,4 +1,4 @@
-package com.nomadev.aplikasigithubuser_submission2.network
+package com.nomadev.aplikasigithubuser_submission2.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

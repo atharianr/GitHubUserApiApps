@@ -16,4 +16,9 @@
     <string name="title">GitHub User</string>
     <string name="check_connection_warning">Please check your network connection.</string>
     <string name="disconnected">Disconnected</string>
+    <string name="info_no_connection">Oops, No internet connection</string>
+    <string name="info_no_connection_2">Make sure wifi or cellular data is turned on and try again.</string>
+    <string name="info_not_found">Sorry, no result found</string>
+    <string name="info_not_found_2">What you searched was unfortunately not found or doesn\'t exist.</string>
+    <string name="not_found">Not Found</string>
 </resources>

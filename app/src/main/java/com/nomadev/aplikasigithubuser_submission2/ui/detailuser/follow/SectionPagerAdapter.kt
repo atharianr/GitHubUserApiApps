@@ -1,26 +1,20 @@
 package com.nomadev.aplikasigithubuser_submission2.ui.detailuser.follow
 
-import android.content.Context
 import android.os.Bundle
-import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import com.nomadev.aplikasigithubuser_submission2.R
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class SectionPagerAdapter(private val mContext: Context, fragmentManager: FragmentManager, bundle: Bundle) :
-    FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class SectionPagerAdapter(activity: AppCompatActivity, data: Bundle) :
+    FragmentStateAdapter(activity) {
 
-    private var fragmentBundle: Bundle = bundle
+    private var fragmentBundle: Bundle = data
 
-    @StringRes
-    private val tabTitle = intArrayOf(R.string.followers, R.string.following)
-
-    override fun getCount(): Int {
+    override fun getItemCount(): Int {
         return 2
     }
 
-    override fun getItem(position: Int): Fragment {
+    override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = FollowersFragment()
@@ -28,9 +22,5 @@ class SectionPagerAdapter(private val mContext: Context, fragmentManager: Fragme
         }
         fragment?.arguments = this.fragmentBundle
         return fragment as Fragment
-    }
-
-    override fun getPageTitle(position: Int): CharSequence {
-        return mContext.resources.getString(tabTitle[position])
     }
 }

@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nomadev.aplikasigithubuser_submission2.model.UserResponse
-import com.nomadev.aplikasigithubuser_submission2.network.RetrofitClient
+import com.nomadev.aplikasigithubuser_submission2.domain.model.UserResponse
+import com.nomadev.aplikasigithubuser_submission2.data.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

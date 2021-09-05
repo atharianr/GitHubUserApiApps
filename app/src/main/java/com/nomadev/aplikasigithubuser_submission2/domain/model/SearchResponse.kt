@@ -1,4 +1,4 @@
-package com.nomadev.aplikasigithubuser_submission2.model
+package com.nomadev.aplikasigithubuser_submission2.domain.model
 
 import com.google.gson.annotations.SerializedName
 

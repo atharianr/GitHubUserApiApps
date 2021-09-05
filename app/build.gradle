@@ -12,7 +12,7 @@ android {
         targetSdk 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "GITHUB_TOKEN", '"token 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"'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,6 +32,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig = true
     }
 }
 

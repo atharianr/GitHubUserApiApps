@@ -4,20 +4,21 @@ import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.ActivitySearchBinding
-import com.nomadev.aplikasigithubuser_submission2.model.ItemsModel
+import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
+import com.nomadev.aplikasigithubuser_submission2.ui.adapter.UserAdapter
 import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
-import androidx.appcompat.widget.SearchView
 
 class SearchActivity : AppCompatActivity() {
 
@@ -41,7 +42,6 @@ class SearchActivity : AppCompatActivity() {
         showLoading(true)
 
         adapter = UserAdapter()
-        adapter.notifyDataSetChanged()
 
         adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ItemsModel) {
@@ -56,6 +56,7 @@ class SearchActivity : AppCompatActivity() {
         binding.rvSearch.layoutManager = LinearLayoutManager(this)
         binding.rvSearch.setHasFixedSize(true)
         binding.rvSearch.adapter = adapter
+        adapter.notifyDataSetChanged()
 
         allUserViewModel = ViewModelProvider(
             this,
@@ -98,7 +99,6 @@ class SearchActivity : AppCompatActivity() {
 
     private fun getAllUser() {
         showLoading(true)
-        showDisconnected(false)
         allUserViewModel.setListAllUser()
         allUserViewModel.status.observe(this, {
             if (it != null) {
@@ -106,6 +106,7 @@ class SearchActivity : AppCompatActivity() {
                 if (it == false) {
                     Toast.makeText(this, R.string.check_connection_warning, Toast.LENGTH_SHORT)
                         .show()
+                    binding.rvSearch.visibility = View.GONE
                     showLoading(false)
                     showDisconnected(true)
                 }
@@ -113,9 +114,17 @@ class SearchActivity : AppCompatActivity() {
         })
 
         allUserViewModel.getListAllUser().observe(this, {
+            showLoading(false)
+            showDisconnected(false)
             if (it != null) {
-                adapter.setData(it)
-                showLoading(false)
+                if (it.size == 0) {
+                    showInfo(true)
+                    binding.rvSearch.visibility = View.GONE
+                } else {
+                    showInfo(false)
+                    binding.rvSearch.visibility = View.VISIBLE
+                    adapter.setData(it)
+                }
             }
         })
     }
@@ -123,7 +132,6 @@ class SearchActivity : AppCompatActivity() {
     private fun startSearch(query: String) {
         if (query.isNotEmpty()) {
             showLoading(true)
-            showDisconnected(false)
             searchViewModel.setSearchUser(query)
             searchViewModel.status.observe(this, {
                 if (it != null) {
@@ -131,11 +139,7 @@ class SearchActivity : AppCompatActivity() {
                     if (it == false) {
                         Toast.makeText(this, R.string.check_connection_warning, Toast.LENGTH_SHORT)
                             .show()
-
-                        val nullData = ArrayList<ItemsModel>()
-                        nullData.clear()
-                        adapter.setData(nullData)
-
+                        binding.rvSearch.visibility = View.GONE
                         showLoading(false)
                         showDisconnected(true)
                     }
@@ -143,10 +147,17 @@ class SearchActivity : AppCompatActivity() {
             })
 
             searchViewModel.getSearchUser().observe(this@SearchActivity, {
+                showLoading(false)
+                showDisconnected(false)
                 if (it != null) {
-                    adapter.setData(it)
-                    showLoading(false)
-                    showDisconnected(false)
+                    if (it.size == 0) {
+                        showInfo(true)
+                        binding.rvSearch.visibility = View.GONE
+                    } else {
+                        showInfo(false)
+                        binding.rvSearch.visibility = View.VISIBLE
+                        adapter.setData(it)
+                    }
                 }
             })
         }
@@ -163,8 +174,24 @@ class SearchActivity : AppCompatActivity() {
     private fun showDisconnected(state: Boolean) {
         if (state) {
             binding.ivDisconnected.visibility = View.VISIBLE
+            binding.tvDisconnected.visibility = View.VISIBLE
+            binding.tvDisconnected2.visibility = View.VISIBLE
         } else {
             binding.ivDisconnected.visibility = View.GONE
+            binding.tvDisconnected.visibility = View.GONE
+            binding.tvDisconnected2.visibility = View.GONE
+        }
+    }
+
+    private fun showInfo(state: Boolean) {
+        if (state) {
+            binding.ivInfo.visibility = View.VISIBLE
+            binding.tvInfo.visibility = View.VISIBLE
+            binding.tvInfo2.visibility = View.VISIBLE
+        } else {
+            binding.ivInfo.visibility = View.GONE
+            binding.tvInfo.visibility = View.GONE
+            binding.tvInfo2.visibility = View.GONE
         }
     }
 

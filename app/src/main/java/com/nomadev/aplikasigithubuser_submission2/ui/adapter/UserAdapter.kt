@@ -1,4 +1,4 @@
-package com.nomadev.aplikasigithubuser_submission2.ui.search
+package com.nomadev.aplikasigithubuser_submission2.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.ItemUserBinding
-import com.nomadev.aplikasigithubuser_submission2.model.ItemsModel
+import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 
 import android.content.Intent
 import android.net.Uri
@@ -31,12 +31,12 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
         return ViewHolder(mView)
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(mData[position])
     }
 
@@ -55,13 +55,12 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
                 }
 
                 Glide.with(itemView)
-                    .load(itemsModel.avatar_url)
-                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .load(itemsModel.avatarUrl)
                     .into(binding.ivAvatar)
                 binding.tvName.text = itemsModel.login
-                binding.tvProfileUrl.text = itemsModel.html_url
+                binding.tvProfileUrl.text = itemsModel.htmlUrl
                 binding.ibLink.setOnClickListener {
-                    val uri = Uri.parse(itemsModel.html_url)
+                    val uri = Uri.parse(itemsModel.htmlUrl)
                     val intent = Intent(Intent.ACTION_VIEW, uri)
                     context.startActivity(intent)
                 }
