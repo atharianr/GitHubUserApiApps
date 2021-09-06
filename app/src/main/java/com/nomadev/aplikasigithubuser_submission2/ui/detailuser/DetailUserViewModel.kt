@@ -1,19 +1,34 @@
 package com.nomadev.aplikasigithubuser_submission2.ui.detailuser
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.nomadev.aplikasigithubuser_submission2.domain.model.UserResponse
+import com.nomadev.aplikasigithubuser_submission2.data.local.FavoriteUser
+import com.nomadev.aplikasigithubuser_submission2.data.local.FavoriteUserDao
+import com.nomadev.aplikasigithubuser_submission2.data.local.UserDatabase
 import com.nomadev.aplikasigithubuser_submission2.data.network.RetrofitClient
+import com.nomadev.aplikasigithubuser_submission2.domain.model.UserResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailUserViewModel : ViewModel() {
+class DetailUserViewModel(application: Application) : AndroidViewModel(application) {
 
     val user = MutableLiveData<UserResponse>()
     val status = MutableLiveData<Boolean>()
+
+    private var userDao: FavoriteUserDao?
+    private var userDb: UserDatabase?
+
+    init {
+        userDb = UserDatabase.getDatabase(application)
+        userDao = userDb?.favoriteUserDao()
+    }
 
     fun setUserDetail(username: String) {
         RetrofitClient.apiInstance
@@ -36,5 +51,22 @@ class DetailUserViewModel : ViewModel() {
 
     fun getUserDetail(): LiveData<UserResponse> {
         return user
+    }
+
+    fun addToFavorite(username: String, id: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            var user = FavoriteUser(username, id)
+            userDao?.addToFavorite(user)
+        }
+    }
+
+    suspend fun checkUser(id: Int): Int? {
+        return userDao?.checkUser(id)
+    }
+
+    fun removeFromFavorite(id: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            userDao?.removeFromFavorite(id)
+        }
     }
 }

@@ -48,6 +48,7 @@ class SearchActivity : AppCompatActivity() {
                 showLoading(false)
                 Intent(this@SearchActivity, DetailUserActivity::class.java).also {
                     it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
+                    it.putExtra(DetailUserActivity.EXTRA_ID, data.id)
                     startActivity(it)
                 }
             }

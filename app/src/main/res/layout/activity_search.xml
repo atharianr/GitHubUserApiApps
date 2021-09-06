@@ -12,6 +12,8 @@
         android:id="@+id/rv_search"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +37,12 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/disconnected"
         android:src="@drawable/ic_baseline_signal_cellular_connected_no_internet_4_bar_24"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/tv_disconnected"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/disconnected" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_disconnected"
@@ -77,12 +79,12 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/not_found"
         android:src="@drawable/ic_not_found"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/tv_info"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/not_found" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_info"

@@ -21,4 +21,5 @@
     <string name="info_not_found">Sorry, no result found</string>
     <string name="info_not_found_2">What you searched was unfortunately not found or doesn\'t exist.</string>
     <string name="not_found">Not Found</string>
+    <string name="favorite">Favorite</string>
 </resources>
