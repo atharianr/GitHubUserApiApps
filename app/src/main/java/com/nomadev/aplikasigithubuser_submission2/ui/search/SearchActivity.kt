@@ -1,6 +1,5 @@
 package com.nomadev.aplikasigithubuser_submission2.ui.search
 
-import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -8,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +19,7 @@ import com.nomadev.aplikasigithubuser_submission2.databinding.ActivitySearchBind
 import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 import com.nomadev.aplikasigithubuser_submission2.ui.adapter.UserAdapter
 import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
+import com.nomadev.aplikasigithubuser_submission2.ui.favorite.FavoriteActivity
 
 class SearchActivity : AppCompatActivity() {
 
@@ -28,7 +29,6 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
     var usernameString: String = ""
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
@@ -42,13 +42,14 @@ class SearchActivity : AppCompatActivity() {
         showLoading(true)
 
         adapter = UserAdapter()
-
         adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ItemsModel) {
                 showLoading(false)
                 Intent(this@SearchActivity, DetailUserActivity::class.java).also {
                     it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
                     it.putExtra(DetailUserActivity.EXTRA_ID, data.id)
+                    it.putExtra(DetailUserActivity.EXTRA_AVATAR_URL, data.avatarUrl)
+                    it.putExtra(DetailUserActivity.EXTRA_HTML_URL, data.htmlUrl)
                     startActivity(it)
                 }
             }
@@ -95,6 +96,17 @@ class SearchActivity : AppCompatActivity() {
                 return false
             }
         })
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.favorite -> {
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
         return true
     }
 

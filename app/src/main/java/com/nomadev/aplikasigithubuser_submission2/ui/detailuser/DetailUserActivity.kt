@@ -26,6 +26,8 @@ class DetailUserActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_ID = "extra_id"
         const val EXTRA_USERNAME = "extra_username"
+        const val EXTRA_AVATAR_URL = "extra_avatar_url"
+        const val EXTRA_HTML_URL = "extra_html_url"
 
         @StringRes
         private val TAB_TITLES = intArrayOf(
@@ -37,6 +39,8 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailUserBinding
     private lateinit var detailUserViewModel: DetailUserViewModel
     private var username: String = ""
+    private var avatarUrl: String = ""
+    private var htmlUrl: String = ""
     private var id: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +53,8 @@ class DetailUserActivity : AppCompatActivity() {
 
         username = intent.getStringExtra(EXTRA_USERNAME).toString()
         id = intent.getIntExtra(EXTRA_ID, 0)
+        avatarUrl = intent.getStringExtra(EXTRA_AVATAR_URL).toString()
+        htmlUrl = intent.getStringExtra(EXTRA_HTML_URL).toString()
         val bundle = Bundle()
         bundle.putString(EXTRA_USERNAME, username)
 
@@ -90,7 +96,7 @@ class DetailUserActivity : AppCompatActivity() {
         toggleFav.setOnClickListener {
             _isChecked = !_isChecked
             if (_isChecked) {
-                detailUserViewModel.addToFavorite(username, id)
+                detailUserViewModel.addToFavorite(username, id, avatarUrl, htmlUrl)
                 Toast.makeText(this, "saved to db", Toast.LENGTH_SHORT).show()
             } else {
                 detailUserViewModel.removeFromFavorite(id)
@@ -102,72 +108,6 @@ class DetailUserActivity : AppCompatActivity() {
 
         return super.onPrepareOptionsMenu(menu)
     }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.toggle_favorite -> {
-//                var _isChecked = false
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    val count = detailUserViewModel.checkUser(id)
-//                    withContext(Dispatchers.Main) {
-//                        if (count != null) {
-//                            if (count > 0) {
-//                                bindingFav.btnToggleFav.isChecked = true
-//                                _isChecked = true
-//                            } else {
-//                                bindingFav.btnToggleFav.isChecked = false
-//                                _isChecked = false
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                bindingFav.btnToggleFav.setOnClickListener {
-//                    _isChecked = !_isChecked
-//                    if (_isChecked) {
-//                        detailUserViewModel.addToFavorite(username, id)
-//                    } else {
-//                        detailUserViewModel.removeFromFavorite(id)
-//                    }
-//
-//                    bindingFav.btnToggleFav.isChecked = _isChecked
-//                }
-//
-//                return true
-//            }
-//            else -> return true
-//        }
-//    }
-
-//    private fun setUpFavorite(username: String, id: Int) {
-//        var _isChecked = false
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val count = detailUserViewModel.checkUser(id)
-//            withContext(Dispatchers.Main) {
-//                if (count != null) {
-//                    if (count > 0) {
-//                        binding.btnToggleFav.isChecked = true
-//                        _isChecked = true
-//                    } else {
-//                        binding.btnToggleFav.isChecked = false
-//                        _isChecked = false
-//                    }
-//                }
-//            }
-//        }
-//
-//        binding.btnToggleFav.setOnClickListener {
-//            _isChecked = !_isChecked
-//            if (_isChecked) {
-//                detailUserViewModel.addToFavorite(username, id)
-//
-//            } else {
-//                detailUserViewModel.removeFromFavorite(id)
-//            }
-//
-//            binding.btnToggleFav.isChecked = _isChecked
-//        }
-//    }
 
     private fun setUpViewPager(username: String) {
         val bundle = Bundle()

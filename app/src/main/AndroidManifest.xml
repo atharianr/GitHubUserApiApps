@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiGithubUserSubmission2.NoActionBar">
         <activity
+            android:name=".ui.favorite.FavoriteActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AplikasiGithubUserSubmission2" />
+        <activity
             android:name=".ui.detailuser.DetailUserActivity"
             android:exported="true"
             android:theme="@style/Theme.AplikasiGithubUserSubmission2" />
