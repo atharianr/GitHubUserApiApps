@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Consumer App</string>
+    <string name="info_empty">Woah, it still empty</string>
+    <string name="info_empty_2">There is no favorite users yet.</string>
+    <string name="not_found">Not Found</string>
+    <string name="username">Username</string>
+    <string name="github_url">GITHUB_URL</string>
+    <string name="splash_logo">Splash Logo</string>
+</resources>

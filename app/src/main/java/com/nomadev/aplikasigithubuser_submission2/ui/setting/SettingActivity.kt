@@ -5,8 +5,8 @@ import android.os.Bundle
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.ActivitySettingBinding
 import com.nomadev.aplikasigithubuser_submission2.domain.model.ReminderModel
-import com.nomadev.aplikasigithubuser_submission2.preference.ReminderPreference
-import com.nomadev.aplikasigithubuser_submission2.receiver.AlarmReceiver
+import com.nomadev.aplikasigithubuser_submission2.utils.preference.ReminderPreference
+import com.nomadev.aplikasigithubuser_submission2.utils.receiver.AlarmReceiver
 
 class SettingActivity : AppCompatActivity() {
 

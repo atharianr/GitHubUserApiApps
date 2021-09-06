@@ -1,4 +1,4 @@
-package com.nomadev.aplikasigithubuser_submission2.receiver
+package com.nomadev.aplikasigithubuser_submission2.utils.receiver
 
 import android.app.AlarmManager
 import android.app.NotificationChannel

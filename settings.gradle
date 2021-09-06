@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Aplikasi Github User - Submission 2"
 include ':app'
+include ':consumerapp'

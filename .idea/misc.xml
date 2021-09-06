@@ -45,6 +45,15 @@
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/home_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/option_menu.xml" value="0.33" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/user_detail_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/drawable-v24/github_logo_action_bar.xml" value="0.131640625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/drawable-v24/ic_baseline_open_in_new_24.xml" value="0.131640625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/drawable-v24/ic_broken_heart.xml" value="0.131640625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/drawable-v24/ic_github_icon_foreground.xml" value="0.131640625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/drawable-v24/ic_github_logo.xml" value="0.166015625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/layout/activity_favorite.xml" value="0.25" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/layout/item_user.xml" value="0.25" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/consumerapp/src/main/res/mipmap-anydpi-v26/ic_github_icon.xml" value="0.131640625" />
       </map>
     </option>
   </component>

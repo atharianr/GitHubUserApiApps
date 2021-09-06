@@ -1,4 +1,4 @@
-package com.nomadev.aplikasigithubuser_submission2.preference
+package com.nomadev.aplikasigithubuser_submission2.utils.preference
 
 import android.content.Context
 import com.nomadev.aplikasigithubuser_submission2.domain.model.ReminderModel
