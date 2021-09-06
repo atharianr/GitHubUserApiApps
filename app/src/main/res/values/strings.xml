@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github User Application - Submission 2</string>
+    <string name="app_name">Gitify</string>
     <string name="splash_logo">Splash Logo</string>
     <string name="search">Search</string>
     <string name="company">Company</string>
@@ -22,4 +22,6 @@
     <string name="info_not_found_2">What you searched was unfortunately not found or doesn\'t exist.</string>
     <string name="not_found">Not Found</string>
     <string name="favorite">Favorite</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="settings">Settings</string>
 </resources>

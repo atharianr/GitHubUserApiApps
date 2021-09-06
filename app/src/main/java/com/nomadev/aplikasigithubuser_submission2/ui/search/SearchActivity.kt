@@ -20,6 +20,7 @@ import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 import com.nomadev.aplikasigithubuser_submission2.ui.adapter.UserAdapter
 import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
 import com.nomadev.aplikasigithubuser_submission2.ui.favorite.FavoriteActivity
+import com.nomadev.aplikasigithubuser_submission2.ui.setting.SettingActivity
 
 class SearchActivity : AppCompatActivity() {
 
@@ -36,7 +37,7 @@ class SearchActivity : AppCompatActivity() {
 
         supportActionBar?.title = getString(R.string.title)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setLogo(R.drawable.github_logo_small)
+        supportActionBar?.setLogo(R.drawable.ic_github_logo)
         supportActionBar?.setDisplayUseLogoEnabled(true)
 
         showLoading(true)
@@ -103,6 +104,10 @@ class SearchActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.favorite -> {
                 val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.settings -> {
+                val intent = Intent(this, SettingActivity::class.java)
                 startActivity(intent)
             }
         }

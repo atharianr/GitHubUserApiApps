@@ -11,6 +11,14 @@
         android:roundIcon="@mipmap/ic_github_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiGithubUserSubmission2.NoActionBar">
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.favorite.FavoriteActivity"
             android:exported="true"
