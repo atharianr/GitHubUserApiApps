@@ -3,15 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gh_dark"
     tools:context=".ui.setting.SettingActivity">
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_reminder"
+        style="@style/SwitchCompatStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/daily_reminder"
-        android:textOn="OFF"
-        android:textOff="ON"/>
+        android:textColor="@color/white"
+        android:textOff="@string/on"
+        android:textOn="@string/off" />
 
 </LinearLayout>

@@ -35,9 +35,9 @@ class SearchActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = getString(R.string.title)
+        supportActionBar?.title = getString(R.string.app_name)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setLogo(R.drawable.ic_github_logo)
+        supportActionBar?.setLogo(R.drawable.github_logo_action_bar)
         supportActionBar?.setDisplayUseLogoEnabled(true)
 
         showLoading(true)

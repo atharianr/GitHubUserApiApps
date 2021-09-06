@@ -20,7 +20,7 @@ class AlarmReceiver : BroadcastReceiver() {
     companion object {
         private const val NOTIFICATION_ID = 1
         private const val CHANNEL_ID = "channel_01"
-        private const val CHANNEL_NAME = "GitHub Daily Reminder"
+        private const val CHANNEL_NAME = "Gitify Daily Reminder"
         private const val TIME_FORMAT = "HH:mm"
         private const val ID_REAPEATING = 101
         const val EXTRA_MESSAGE = "extra_message"
@@ -42,8 +42,8 @@ class AlarmReceiver : BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setContentIntent(pendingIntent)
             .setSmallIcon(R.drawable.ic_github_logo)
-            .setContentTitle(context.resources.getString(R.string.app_name))
-            .setContentText("GitHub Daily Reminder")
+            .setContentTitle("Gitify Daily")
+            .setContentText("Check out gitify today!")
             .setAutoCancel(true)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

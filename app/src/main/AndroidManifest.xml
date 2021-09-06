@@ -18,7 +18,8 @@
 
         <activity
             android:name=".ui.setting.SettingActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AplikasiGithubUserSubmission2" />
         <activity
             android:name=".ui.favorite.FavoriteActivity"
             android:exported="true"

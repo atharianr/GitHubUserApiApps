@@ -23,21 +23,17 @@ class SettingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val reminderPreference = ReminderPreference(this)
-        if (reminderPreference.getReminder().isReminder) {
-            binding.switchReminder.isChecked = true
-        } else {
-            binding.switchReminder.isChecked = false
-        }
+        binding.switchReminder.isChecked = reminderPreference.getReminder().isReminder
 
         alarmReceiver = AlarmReceiver()
-        binding.switchReminder.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchReminder.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 saveReminder(true)
                 alarmReceiver.setRepeatingAlarm(
                     this,
                     "RepeatingAlarm",
-                    "22:23",
-                    "GitHub Daily Reminder"
+                    "23:19",
+                    "Gitify Daily Reminder"
                 )
             } else {
                 saveReminder(false)
