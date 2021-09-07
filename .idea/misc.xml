@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/drawable-v21/app_widget_background.xml" value="0.28378378378378377" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/drawable-v24/ic_baseline_home_work_24.xml" value="0.21770833333333334" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/drawable-v24/ic_baseline_location_on_24.xml" value="0.21770833333333334" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/drawable/cursor.xml" value="0.287109375" />
@@ -31,15 +32,18 @@
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/activity_search.xml" value="0.33" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/activity_setting.xml" value="0.275" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/favorite_user_widget.xml" value="0.25" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/fragment_follow.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/fragment_followers.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/fragment_search.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/image_banner_widget.xml" value="0.13422131147540983" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/item_detail_activity.xml" value="0.18" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/item_user.xml" value="0.33" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/test.xml" value="0.15" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/test2.xml" value="0.1" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/test3.xml" value="0.15390625" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/test4.xml" value="0.15390625" />
+        <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/layout/widget_item.xml" value="0.1484375" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/detail_menu.xml" value="0.25" />
         <entry key="..\:/Android Studio Save/AplikasiGithubUserSubmission2/app/src/main/res/menu/home_menu.xml" value="0.20520833333333333" />

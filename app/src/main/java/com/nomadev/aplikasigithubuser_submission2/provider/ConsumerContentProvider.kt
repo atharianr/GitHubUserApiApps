@@ -23,18 +23,6 @@ class ConsumerContentProvider : ContentProvider() {
 
     private lateinit var userDao: FavoriteUserDao
 
-    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
-        return 0
-    }
-
-    override fun getType(uri: Uri): String? {
-        return null
-    }
-
-    override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        return null
-    }
-
     override fun onCreate(): Boolean {
         userDao = context.let {
             UserDatabase.getDatabase(it!!)?.favoriteUserDao()!!
@@ -59,6 +47,18 @@ class ConsumerContentProvider : ContentProvider() {
             }
         }
         return cursor
+    }
+
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
+        return 0
+    }
+
+    override fun getType(uri: Uri): String? {
+        return null
+    }
+
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+        return null
     }
 
     override fun update(

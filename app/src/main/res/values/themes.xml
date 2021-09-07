@@ -35,7 +35,7 @@
         <item name="android:background">@color/gh_dark</item>
     </style>
 
-    <style name="SwitchCompatStyle" >
+    <style name="SwitchCompatStyle">
         <item name="thumbTint">@color/switch_thumb_color</item>
         <item name="trackTint">@color/switch_track_color</item>
     </style>
@@ -58,4 +58,12 @@
         <item name="android:textColorHint">@android:color/darker_gray</item>
         <item name="android:searchHintIcon" tools:ignore="NewApi">@null</item>
     </style>
+
+    <style name="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <item name="appWidgetRadius">8dp</item>
+        <item name="appWidgetPadding">4dp</item>
+        <item name="appWidgetInnerRadius">4dp</item>
+    </style>
+
+    <style name="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainer" parent="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainerParent" />
 </resources>

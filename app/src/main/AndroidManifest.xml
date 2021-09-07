@@ -15,6 +15,18 @@
         android:roundIcon="@mipmap/ic_github_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiGithubUserSubmission2.NoActionBar">
+        <receiver
+            android:name=".ui.widgets.FavoriteUserWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/favorite_user_widget_info" />
+        </receiver>
+
         <provider
             android:name=".provider.ConsumerContentProvider"
             android:authorities="com.nomadev.aplikasigithubuser_submission2"
@@ -23,9 +35,13 @@
             android:readPermission="com.nomadev.aplikasigithubuser_submission2.READ_DATABASE" />
 
         <receiver
-            android:name="com.nomadev.aplikasigithubuser_submission2.utils.receiver.AlarmReceiver"
+            android:name=".utils.receiver.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
+
+        <service
+            android:name=".ui.widgets.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity
             android:name=".ui.setting.SettingActivity"
