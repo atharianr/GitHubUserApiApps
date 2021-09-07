@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.FragmentFollowBinding
 import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
-import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
 import com.nomadev.aplikasigithubuser_submission2.ui.adapter.UserAdapter
+import com.nomadev.aplikasigithubuser_submission2.ui.detailuser.DetailUserActivity
 
 class FollowingFragment : Fragment(R.layout.fragment_follow) {
 
@@ -30,7 +30,7 @@ class FollowingFragment : Fragment(R.layout.fragment_follow) {
 
         adapter = UserAdapter()
 
-        adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback{
+        adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ItemsModel) {
                 Intent(activity, DetailUserActivity::class.java).also {
                     it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
@@ -42,7 +42,6 @@ class FollowingFragment : Fragment(R.layout.fragment_follow) {
         binding.rvUser.setHasFixedSize(true)
         binding.rvUser.layoutManager = LinearLayoutManager(this.activity)
         binding.rvUser.adapter = adapter
-        adapter.notifyDataSetChanged()
 
         showLoading(true)
 
@@ -54,6 +53,7 @@ class FollowingFragment : Fragment(R.layout.fragment_follow) {
         followingViewModel.getListFollowing().observe(viewLifecycleOwner, {
             if (it != null) {
                 adapter.setData(it)
+                adapter.notifyDataSetChanged()
                 showLoading(false)
             }
         })

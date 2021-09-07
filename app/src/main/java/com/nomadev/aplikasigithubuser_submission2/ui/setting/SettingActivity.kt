@@ -1,7 +1,7 @@
 package com.nomadev.aplikasigithubuser_submission2.ui.setting
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.nomadev.aplikasigithubuser_submission2.R
 import com.nomadev.aplikasigithubuser_submission2.databinding.ActivitySettingBinding
 import com.nomadev.aplikasigithubuser_submission2.domain.model.ReminderModel
@@ -32,7 +32,7 @@ class SettingActivity : AppCompatActivity() {
                 alarmReceiver.setRepeatingAlarm(
                     this,
                     "RepeatingAlarm",
-                    "23:19",
+                    "09:00",
                     "Gitify Daily Reminder"
                 )
             } else {

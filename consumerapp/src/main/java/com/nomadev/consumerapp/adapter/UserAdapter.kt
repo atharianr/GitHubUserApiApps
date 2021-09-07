@@ -1,6 +1,5 @@
 package com.nomadev.consumerapp.adapter
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
@@ -16,13 +15,7 @@ import com.nomadev.consumerapp.model.ItemsModel
 class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private val mData = ArrayList<ItemsModel>()
-    private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
     fun setData(items: ArrayList<ItemsModel>) {
         mData.clear()
         mData.addAll(items)
@@ -47,11 +40,6 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
         fun bind(itemsModel: ItemsModel) {
             with(itemView) {
-
-                binding.root.setOnClickListener {
-                    onItemClickCallback?.onItemClicked(itemsModel)
-                }
-
                 Glide.with(itemView)
                     .load(itemsModel.avatarUrl)
                     .into(binding.ivAvatar)
@@ -64,9 +52,5 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
                 }
             }
         }
-    }
-
-    interface OnItemClickCallback {
-        fun onItemClicked(data: ItemsModel)
     }
 }

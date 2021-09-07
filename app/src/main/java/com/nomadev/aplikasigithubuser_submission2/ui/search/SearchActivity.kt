@@ -59,7 +59,6 @@ class SearchActivity : AppCompatActivity() {
         binding.rvSearch.layoutManager = LinearLayoutManager(this)
         binding.rvSearch.setHasFixedSize(true)
         binding.rvSearch.adapter = adapter
-        adapter.notifyDataSetChanged()
 
         allUserViewModel = ViewModelProvider(
             this,
@@ -142,6 +141,7 @@ class SearchActivity : AppCompatActivity() {
                     showInfo(false)
                     binding.rvSearch.visibility = View.VISIBLE
                     adapter.setData(it)
+                    adapter.notifyDataSetChanged()
                 }
             }
         })
@@ -175,6 +175,7 @@ class SearchActivity : AppCompatActivity() {
                         showInfo(false)
                         binding.rvSearch.visibility = View.VISIBLE
                         adapter.setData(it)
+                        adapter.notifyDataSetChanged()
                     }
                 }
             })

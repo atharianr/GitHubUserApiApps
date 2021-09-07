@@ -1,10 +1,10 @@
 package com.nomadev.aplikasigithubuser_submission2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.nomadev.aplikasigithubuser_submission2.ui.search.SearchActivity
 
 class MainActivity : AppCompatActivity() {

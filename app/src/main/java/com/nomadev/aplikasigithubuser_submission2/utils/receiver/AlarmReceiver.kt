@@ -42,8 +42,8 @@ class AlarmReceiver : BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setContentIntent(pendingIntent)
             .setSmallIcon(R.drawable.ic_github_logo)
-            .setContentTitle("Gitify Daily")
-            .setContentText("Check out gitify today!")
+            .setContentTitle(context.getString(R.string.gitify_daily))
+            .setContentText(context.getString(R.string.check_out_daily))
             .setAutoCancel(true)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -88,7 +88,7 @@ class AlarmReceiver : BroadcastReceiver() {
             pendingIntent
         )
 
-        Toast.makeText(context, "Repeating alarm set up", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.daily_on), Toast.LENGTH_SHORT).show()
 
     }
 
@@ -112,6 +112,6 @@ class AlarmReceiver : BroadcastReceiver() {
         pendingIntent.cancel()
         alarmManager.cancel(pendingIntent)
 
-        Toast.makeText(context, "Repeating alarm canceled", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.daily_off), Toast.LENGTH_SHORT).show()
     }
 }

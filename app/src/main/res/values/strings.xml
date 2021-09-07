@@ -33,4 +33,8 @@
     <string name="app_widget_description">This is an app widget description</string>
     <string name="refresh">Refresh</string>
     <string name="avatar">Avatar</string>
+    <string name="daily_on">Daily reminder turned on</string>
+    <string name="daily_off">Daily reminder turned off</string>
+    <string name="gitify_daily">Gitify Daily</string>
+    <string name="check_out_daily">Check out gitify today!</string>
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikasi Konsumen</string>
+    <string name="info_empty">Wah, masih kosong</string>
+    <string name="info_empty_2">Belum ada pengguna favorit.</string>
+    <string name="not_found">Tidak ditemukan</string>
+    <string name="username">Username</string>
+    <string name="github_url">GITHUB_URL</string>
+    <string name="splash_logo">Logo Splash</string>
+</resources>

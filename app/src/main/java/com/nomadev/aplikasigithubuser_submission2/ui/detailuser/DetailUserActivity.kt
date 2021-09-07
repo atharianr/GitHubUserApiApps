@@ -97,10 +97,8 @@ class DetailUserActivity : AppCompatActivity() {
             _isChecked = !_isChecked
             if (_isChecked) {
                 detailUserViewModel.addToFavorite(username, id, avatarUrl, htmlUrl)
-                Toast.makeText(this, "saved to db", Toast.LENGTH_SHORT).show()
             } else {
                 detailUserViewModel.removeFromFavorite(id)
-                Toast.makeText(this, "removed to db", Toast.LENGTH_SHORT).show()
             }
 
             toggleFav.isChecked = _isChecked

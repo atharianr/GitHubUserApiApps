@@ -34,7 +34,7 @@ class ConsumerContentProvider : ContentProvider() {
         uri: Uri, projection: Array<String>?, selection: String?,
         selectionArgs: Array<String>?, sortOrder: String?
     ): Cursor? {
-        var cursor: Cursor?
+        val cursor: Cursor?
         when (uriMatcher.match(uri)) {
             ID_FAV_USER_DATA -> {
                 cursor = userDao.findAll()

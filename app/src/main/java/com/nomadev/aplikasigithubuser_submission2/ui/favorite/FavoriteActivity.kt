@@ -42,15 +42,15 @@ class FavoriteActivity : AppCompatActivity() {
         binding.rvUser.layoutManager = LinearLayoutManager(this)
         binding.rvUser.setHasFixedSize(true)
         binding.rvUser.adapter = adapter
-        adapter.notifyDataSetChanged()
 
         viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
         viewModel.getFavoriteUser()?.observe(this, {
             if (it != null) {
-                if (it.size > 0) {
+                if (it.isNotEmpty()) {
                     showInfo(false)
                     val list = mapList(it)
                     adapter.setData(list)
+                    adapter.notifyDataSetChanged()
                 } else {
                     showInfo(true)
                     binding.rvUser.visibility = View.GONE

@@ -4,13 +4,13 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 import com.nomadev.aplikasigithubuser_submission2.data.network.RetrofitClient
+import com.nomadev.aplikasigithubuser_submission2.domain.model.ItemsModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FollowingViewModel: ViewModel() {
+class FollowingViewModel : ViewModel() {
 
     val listFollowing = MutableLiveData<ArrayList<ItemsModel>>()
 
