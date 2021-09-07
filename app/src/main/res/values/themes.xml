@@ -59,11 +59,4 @@
         <item name="android:searchHintIcon" tools:ignore="NewApi">@null</item>
     </style>
 
-    <style name="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
-        <item name="appWidgetRadius">8dp</item>
-        <item name="appWidgetPadding">4dp</item>
-        <item name="appWidgetInnerRadius">4dp</item>
-    </style>
-
-    <style name="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainer" parent="Theme.AplikasiGithubUserSubmission2.NoActionBar.AppWidgetContainerParent" />
 </resources>
