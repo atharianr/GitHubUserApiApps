@@ -160,6 +160,7 @@ class SearchActivity : AppCompatActivity() {
                         binding.rvSearch.visibility = View.GONE
                         showLoading(false)
                         showDisconnected(true)
+                        showInfo(false)
                     }
                 }
             })
@@ -170,9 +171,11 @@ class SearchActivity : AppCompatActivity() {
                 if (it != null) {
                     if (it.size == 0) {
                         showInfo(true)
+                        showDisconnected(false)
                         binding.rvSearch.visibility = View.GONE
                     } else {
                         showInfo(false)
+                        showDisconnected(false)
                         binding.rvSearch.visibility = View.VISIBLE
                         adapter.setData(it)
                         adapter.notifyDataSetChanged()
