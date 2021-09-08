@@ -26,7 +26,5 @@ class FavoriteViewModel(application: Application) : AndroidViewModel(application
         list.postValue(listConverted)
     }
 
-    fun getFavoriteUser(): LiveData<ArrayList<ItemsModel>> {
-        return list
-    }
+    fun getFavoriteUser(): LiveData<ArrayList<ItemsModel>> = list
 }

@@ -16,7 +16,5 @@ class FavoriteViewModel(application: Application) : AndroidViewModel(application
         userDao = userDb?.favoriteUserDao()
     }
 
-    fun getFavoriteUser(): LiveData<List<FavoriteUser>>? {
-        return userDao?.getFavoriteUser()
-    }
+    fun getFavoriteUser(): LiveData<List<FavoriteUser>>? = userDao?.getFavoriteUser()
 }

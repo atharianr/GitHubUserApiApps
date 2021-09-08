@@ -31,8 +31,5 @@ class FollowersViewModel : ViewModel() {
             })
     }
 
-    fun getListFollowers(): LiveData<ArrayList<ItemsModel>> {
-        return listFollowers
-    }
-
+    fun getListFollowers(): LiveData<ArrayList<ItemsModel>> = listFollowers
 }

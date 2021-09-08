@@ -34,6 +34,7 @@ class FavoriteActivity : AppCompatActivity() {
                     it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
                     it.putExtra(DetailUserActivity.EXTRA_ID, data.id)
                     it.putExtra(DetailUserActivity.EXTRA_AVATAR_URL, data.avatarUrl)
+                    it.putExtra(DetailUserActivity.EXTRA_HTML_URL, data.htmlUrl)
                     startActivity(it)
                 }
             }

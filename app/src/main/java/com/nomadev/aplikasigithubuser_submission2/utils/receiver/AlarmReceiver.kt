@@ -23,8 +23,8 @@ class AlarmReceiver : BroadcastReceiver() {
         private const val CHANNEL_NAME = "Gitify Daily Reminder"
         private const val TIME_FORMAT = "HH:mm"
         private const val ID_REAPEATING = 101
-        const val EXTRA_MESSAGE = "extra_message"
-        const val EXTRA_TYPE = "extra_type"
+        private const val EXTRA_MESSAGE = "extra_message"
+        private const val EXTRA_TYPE = "extra_type"
     }
 
     override fun onReceive(context: Context, intent: Intent) {

@@ -19,7 +19,7 @@ import retrofit2.Response
 
 class DetailUserViewModel(application: Application) : AndroidViewModel(application) {
 
-    val user = MutableLiveData<UserResponse>()
+    private val user = MutableLiveData<UserResponse>()
     val status = MutableLiveData<Boolean>()
 
     private var userDao: FavoriteUserDao?
@@ -49,9 +49,7 @@ class DetailUserViewModel(application: Application) : AndroidViewModel(applicati
             })
     }
 
-    fun getUserDetail(): LiveData<UserResponse> {
-        return user
-    }
+    fun getUserDetail(): LiveData<UserResponse> = user
 
     fun addToFavorite(username: String, id: Int, avatarUrl: String, htmlUrl: String) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -60,9 +58,8 @@ class DetailUserViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    suspend fun checkUser(id: Int): Int? {
-        return userDao?.checkUser(id)
-    }
+    suspend fun checkUser(id: Int): Int? = userDao?.checkUser(id)
+
 
     fun removeFromFavorite(id: Int) {
         CoroutineScope(Dispatchers.IO).launch {

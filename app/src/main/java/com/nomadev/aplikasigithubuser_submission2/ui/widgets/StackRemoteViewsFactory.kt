@@ -53,9 +53,7 @@ internal class StackRemoteViewsFactory(private val mContext: Context) :
         list = listOf()
     }
 
-    override fun getCount(): Int {
-        return list.size
-    }
+    override fun getCount(): Int = list.size
 
     override fun getViewAt(position: Int): RemoteViews {
         val rv = RemoteViews(mContext.packageName, R.layout.widget_item)
@@ -70,21 +68,13 @@ internal class StackRemoteViewsFactory(private val mContext: Context) :
         return rv
     }
 
-    override fun getLoadingView(): RemoteViews? {
-        return null
-    }
+    override fun getLoadingView(): RemoteViews? = null
 
-    override fun getViewTypeCount(): Int {
-        return 1
-    }
+    override fun getViewTypeCount(): Int = 1
 
-    override fun getItemId(position: Int): Long {
-        return 0
-    }
+    override fun getItemId(position: Int): Long = 0
 
-    override fun hasStableIds(): Boolean {
-        return true
-    }
+    override fun hasStableIds(): Boolean = true
 }
 
 private fun String.toBitmap(mContext: Context): Bitmap {

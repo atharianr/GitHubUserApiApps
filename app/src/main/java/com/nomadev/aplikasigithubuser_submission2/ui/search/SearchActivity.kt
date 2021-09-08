@@ -28,7 +28,7 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var searchViewModel: SearchViewModel
     private lateinit var allUserViewModel: AllUserViewModel
     private lateinit var adapter: UserAdapter
-    var usernameString: String = ""
+    private var usernameString: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

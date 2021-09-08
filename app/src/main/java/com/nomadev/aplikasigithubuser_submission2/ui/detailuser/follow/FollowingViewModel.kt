@@ -32,7 +32,5 @@ class FollowingViewModel : ViewModel() {
 
     }
 
-    fun getListFollowing(): LiveData<ArrayList<ItemsModel>> {
-        return listFollowing
-    }
+    fun getListFollowing(): LiveData<ArrayList<ItemsModel>> = listFollowing
 }

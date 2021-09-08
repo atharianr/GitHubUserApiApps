@@ -4,8 +4,8 @@ import android.net.Uri
 import android.provider.BaseColumns
 
 object DatabaseContract {
-    const val AUTHORITY = "com.nomadev.aplikasigithubuser_submission2"
-    const val SCHEME = "content"
+    private const val AUTHORITY = "com.nomadev.aplikasigithubuser_submission2"
+    private const val SCHEME = "content"
 
     internal class FavoriteUserColumns : BaseColumns {
         companion object {

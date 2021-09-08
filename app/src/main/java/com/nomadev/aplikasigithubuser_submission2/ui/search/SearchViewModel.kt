@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class SearchViewModel : ViewModel() {
 
-    val listUsers = MutableLiveData<ArrayList<ItemsModel>>()
+    private val listUsers = MutableLiveData<ArrayList<ItemsModel>>()
     val status = MutableLiveData<Boolean>()
 
     fun setSearchUser(query: String) {
@@ -37,7 +37,5 @@ class SearchViewModel : ViewModel() {
             })
     }
 
-    fun getSearchUser(): LiveData<ArrayList<ItemsModel>> {
-        return listUsers
-    }
+    fun getSearchUser(): LiveData<ArrayList<ItemsModel>> = listUsers
 }

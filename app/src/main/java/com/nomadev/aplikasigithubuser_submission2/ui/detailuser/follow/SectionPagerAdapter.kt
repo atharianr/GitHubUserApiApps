@@ -10,9 +10,7 @@ class SectionPagerAdapter(activity: AppCompatActivity, data: Bundle) :
 
     private var fragmentBundle: Bundle = data
 
-    override fun getItemCount(): Int {
-        return 2
-    }
+    override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null

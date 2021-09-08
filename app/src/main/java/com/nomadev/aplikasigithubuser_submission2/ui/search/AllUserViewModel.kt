@@ -12,7 +12,7 @@ import retrofit2.Response
 
 class AllUserViewModel : ViewModel() {
 
-    val listAllUser = MutableLiveData<ArrayList<ItemsModel>>()
+    private val listAllUser = MutableLiveData<ArrayList<ItemsModel>>()
     val status = MutableLiveData<Boolean>()
 
     fun setListAllUser() {
@@ -36,7 +36,5 @@ class AllUserViewModel : ViewModel() {
             })
     }
 
-    fun getListAllUser(): LiveData<ArrayList<ItemsModel>> {
-        return listAllUser
-    }
+    fun getListAllUser(): LiveData<ArrayList<ItemsModel>> = listAllUser
 }

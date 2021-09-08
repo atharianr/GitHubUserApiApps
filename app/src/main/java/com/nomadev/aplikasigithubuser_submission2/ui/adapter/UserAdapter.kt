@@ -38,9 +38,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
         holder.bind(mData[position])
     }
 
-    override fun getItemCount(): Int {
-        return mData.size
-    }
+    override fun getItemCount(): Int = mData.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemUserBinding.bind(itemView)

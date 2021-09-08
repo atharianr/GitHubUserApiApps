@@ -5,7 +5,7 @@ import com.nomadev.aplikasigithubuser_submission2.domain.model.ReminderModel
 
 class ReminderPreference(context: Context) {
     companion object {
-        const val PREFS_NAME = "reminder_pref"
+        private const val PREFS_NAME = "reminder_pref"
         private const val IS_REMINDER = "is_reminder"
     }
 

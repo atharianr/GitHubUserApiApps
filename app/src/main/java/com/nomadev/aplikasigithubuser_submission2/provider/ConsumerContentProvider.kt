@@ -11,8 +11,8 @@ import com.nomadev.aplikasigithubuser_submission2.data.local.UserDatabase
 class ConsumerContentProvider : ContentProvider() {
 
     companion object {
-        const val AUTHORITY = "com.nomadev.aplikasigithubuser_submission2"
-        const val TABLE_NAME = "favorite_user"
+        private const val AUTHORITY = "com.nomadev.aplikasigithubuser_submission2"
+        private const val TABLE_NAME = "favorite_user"
         const val ID_FAV_USER_DATA = 1
         val uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
 
@@ -49,22 +49,14 @@ class ConsumerContentProvider : ContentProvider() {
         return cursor
     }
 
-    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
-        return 0
-    }
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int = 0
 
-    override fun getType(uri: Uri): String? {
-        return null
-    }
+    override fun getType(uri: Uri): String? = null
 
-    override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        return null
-    }
+    override fun insert(uri: Uri, values: ContentValues?): Uri? = null
 
     override fun update(
         uri: Uri, values: ContentValues?, selection: String?,
         selectionArgs: Array<String>?
-    ): Int {
-        return 0
-    }
+    ): Int = 0
 }
